@@ -1,0 +1,4 @@
+a = []
+for i in range(int(input('n: '))):
+    a.append(' '.join(set(input().split()) & set(input().split())))
+print(*a, sep='\n')
