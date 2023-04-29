@@ -1,0 +1,9 @@
+import re
+ 
+def roads(*lst: list[str]) -> dict:
+    d = dict()
+    d['short'] = [i for i in lst if len(i) <= 10]
+    d['long'] = [i for i in lst if 10 < len(i) <= 25]
+    d['very long'] = [i for i in lst if len(i) > 25]
+    d['wonderful'] = [i for i in lst if len(re.findall(r'[A-Z]', i)) >= 2]
+    return d
